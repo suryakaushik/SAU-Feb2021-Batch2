@@ -1,0 +1,171 @@
+        .first
+        {
+            background-image:url('https://www.wallpapertip.com/wmimgs/66-666819_website-design-background-creative-background-image-for-website.jpg');
+            height: 100%;
+       
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+      .rest
+      {
+          background-color: aquamarine;
+          box-sizing: border-box;
+      }
+        nav
+        {
+            text-align:center;
+            display: block;
+            background-color: aquamarine;
+        }
+       .header {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+       }
+
+
+       body
+       {
+           margin:0;
+           padding:0;
+           background-size:cover;
+          
+       }
+       .box
+       {
+           width:450px;
+           background:rgba(0,0,0,0.4);
+           padding:40px;
+           text-align:center;
+           margin:auto;
+           margin-top:1%;
+           margin-bottom:1%;
+           border-bottom: 1%;
+           color:white;
+           font-family:'Century Gothic',sans-serif;
+       }
+       .box-img
+       {
+           border-radius:50%;
+           width:200px;
+           height:200px;
+           background-size: cover;
+
+       }
+       .box h1
+       {
+           font-size:40px;
+           letter-spacing:4px;
+           font-weight:100;
+       }
+       .box h5
+       {
+           font-size:20px;
+           letter-spacing:3px;
+         font-weight:100;
+         
+       }
+       .box p
+       {
+           text-align:justify;
+       }
+
+
+       *{
+        font-family:sans-serif;
+        list-style:none;
+        padding:0;
+        box-sizing: border-box;
+        }
+
+    .skills
+    {
+        width:500px;
+        margin:60px auto;
+        color:black;
+    }
+    .skills li{
+        margin:20px 0;
+    
+    }
+    .bar
+    {
+        background: #353b48;
+        display:block;
+        height:2px;
+        border:1px solid rgba(0,0,0,0.3);
+        border-radius:3px;
+        overflow:hidden;
+        box-shadow:0 0 10px #2187e7b3;
+    }
+    .bar span
+    {
+        height:2px;
+        float:left;
+        background:#2187e7;
+    
+    
+    }.html
+    {
+        width:90%;
+        animation: html 2s;
+    }
+    .css{
+        width:65%;
+        animation:css 2s;
+    }
+    .jquery
+    {
+        width:90%;
+        animation: jquery 2s;
+    }
+    .javascript
+    {
+        width:70%;
+        animation: javascript 2s;
+    }
+    @keyframes html
+    {
+        0%{
+            width:0%;
+        }
+        100%
+        {
+            width:90%;
+        }
+    }
+    
+    @keyframes css
+    {
+        0%{
+            width:0%;
+        }
+        100%
+        {
+            width:65%;
+        }
+    }
+    
+    @keyframes jquery
+    {
+        0%{
+            width:0%;
+        }
+        100%
+        {
+            width:90%;
+        }
+    }
+    
+    @keyframes javascript
+    {
+        0%{
+            width:0%;
+        }
+        100%
+        {
+            width:70%;
+        }
+    }
