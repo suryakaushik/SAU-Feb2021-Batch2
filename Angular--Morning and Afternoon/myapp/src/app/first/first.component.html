@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+        <p class="offset-md-2">
+          {{ myForm.value | json }}
+          <br>Testing pipe..... {{ myForm.value.DateOfBirth | MyDate:"MM DD, YYYY" }}
+        </p>
+
+        <form novalidate [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-group row offset-md-2 col-md-6 ">
+          <div class='form-control'>
+            <input formControlName="FirstName" placeholder="First Name" type="text" >
+          </div>
+          <div class='form-control'>
+            <input formControlName="LastName" placeholder="Last Name" type="text">
+
+          </div>
+          <div class='form-control'>
+            <input formControlName="ContactNumber" placeholder="Contact Number" type="text" pattern = "^\d{10}$">
+
+          </div>
+          <div class='form-control'>
+            <input formControlName="DateOfBirth" placeholder="DateOfBirth dd-mm-yyyy" type="text">
+
+          </div>
+          <div class='form-control'>
+            <input formControlName="City" placeholder="City" type="text" >
+
+          </div>
+          <div class='form-control'>
+            <input formControlName="PinCode" placeholder="PinCode" type="text">
+          </div>
+
+          <div class="container" style="padding: 50px;">
+            <button [disabled]="!myForm.valid" type="submit" class="btn btn-block">Validate</button>
+
+          </div>
+        </form>
+
+        <div class="container" style="padding: 50px;">
+          <button class="btn btn-block" (click)="OnAdd()">Add Details</button>
+          <button name="del" class="btn btn-block" (click)="OnDelete()">Delete this record</button>
+          <button name="display" class="btn btn-block" (click)="OnDisplay()">Display All</button>
+
+        </div>
+
+        {{res}}
+
+      <div class="table-responsive">
+        <table class="table table-striped bg-active" *ngIf = "customform.length>=0" >
+              <tr>
+                  <th (click) = "sorttable('FirstName')" class = "table">First Name  </th>
+                  <th (click) = "sorttable('lastName')" class = "table">Last Name </th>
+                  <th (click) = "sorttable('ContactNumber')" class = "table">Phone Number </th>
+                  <th (click) = "sorttable('DateOfBirth')" class = "table">DOB </th>
+                  <th (click) = "sorttable('City')" class = "table">City </th>
+                  <th (click) = "sorttable('PinCode')" class = "table">pin Code </th>
+
+              </tr>
+          <tr *ngFor = "let i of customform">
+              <td >{{i.FirstName}}</td>
+              <td >{{i.LastName}}</td>
+              <td >{{i.ContactNumber}}</td>
+              <td >{{i.DateOfBirth | MyDate:"MM DD, YYYY" }}</td>
+              <td >{{i.City}}</td>
+              <td >{{i.PinCode}}</td>
+              <td (click) = "delete(i.FirstName)"> <button class="btn"> delete</button></td>
+
+
+          </tr>
+
+      </table>
+    </div>
+
+
+
+
+</body>
+</html>
